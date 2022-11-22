@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+
 import './App.css';
+import ButtonClicks from './components/ButtonClicks';
+import CajaClicks from './components/CajaClicks';
+import { useState } from 'react';
 
 function App() {
+
+  const [numero, setNumero] = useState(0)
+
+  function aumentar(){
+    setNumero(numero+1)
+  }
+
+  function disminuir(){
+    setNumero(numero-1)
+  }
+
+  function reiniciar(){
+    setNumero(0)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <CajaClicks valor={numero}/>
+
+      <ButtonClicks action="aumentar"  manejarClick={aumentar}/>
+      <ButtonClicks action="disminuir" manejarClick={disminuir}/>
+      <ButtonClicks action="reiniciar" manejarClick={reiniciar}/>
+
     </div>
   );
 }

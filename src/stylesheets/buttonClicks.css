@@ -1,0 +1,20 @@
+.button-clicks{
+    color: white;
+    padding: 1em;
+    border-radius: 8px;
+    font-size: 18px;
+}
+.button-clicks:hover{
+    background-color: green;
+}
+
+.aumentar{
+    background-color: purple;
+}
+
+.disminuir{
+    background-color: orange;
+}
+.reiniciar{
+    background-color: red;
+}
